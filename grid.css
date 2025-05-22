@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.blogs{
+    height: auto !important;
+}
+
+
+.footer{
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .footer{
+        height: 1207px;
+        
+    }
+  
+    .nav-list {
+        padding: 30px !important;
+        width: 100% !important;
+        margin-left: 0px !important;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.pre-testi{
+    width: 100% !important;
+    text-align: center !important;
+
+}
+
+@media (min-width: 320px) and (max-width: 768px)  {
+    .fist{
+        height: 200px;
+        margin-bottom: 50px;
+        background-size: center;
+    }
+    .top{
+        display: none;
+    }
+
+    .nav-list {
+        padding: 30px !important;
+        width: 100% !important;
+        margin-left: 0px !important;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+    .sraka-title{
+        margin-top: 100px !important;
+    }
+
+    .footer-text{
+        display: none;
+    }
+
+    .pre-testi{
+        margin-left: 0px;
+        font-size: 15px;
+    }
+}   
+

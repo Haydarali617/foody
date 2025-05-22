@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="plus-cart.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="plus-card-box container">
+            <div id="cartItem" class="cart-card">
+                <!-- Контент добавляется скриптом -->
+            </div>
+            <div class="overall"></div>
+        </div>
+
+        <script>
+            function renderCart() {
+                const items =
+                    JSON.parse(localStorage.getItem('cartItems')) || [];
+                const container = document.getElementById('cartItem');
+                const overall = document.querySelector('.overall');
+
+                if (items.length === 0) {
+                    container.innerText = 'Корзина пуста';
+                    overall.innerHTML = '';
+                    return;
+                }
+
+                container.innerHTML = '';
+                let total = 0;
+
+                items.forEach((item, index) => {
+                    const priceNum = parseFloat(
+                        item.price.replace(/[^0-9\.]+/g, '')
+                    );
+                    total += priceNum * item.quantity;
+
+                    container.innerHTML += `
+      <div class="cart-product" data-index="${index}" style="display:flex; align-items:center; margin-bottom:10px;">
+        <img src="${item.image}" alt="Product Image" width="100" style="margin-right:10px;">
+        <div style="flex-grow:1;">
+          <h2>${item.title}</h2>
+          <p>${item.price}</p>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:5px;">
+            <button onclick="changeQuantity(${index}, -1)" style="padding:5px 10px;">-</button>
+            <span>x${item.quantity}</span>
+            <button onclick="changeQuantity(${index}, 1)" style="padding:5px 10px;">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+                });
+
+                overall.innerHTML = `
+    <p>Общая сумма: $${total.toFixed(2)}</p>
+    <button onclick="clearCart()">Очистить корзину</button>
+    <button onclick="checkoutCart()">Оформить заказ</button>
+  `;
+            }
+
+            // Изменение количества товара в корзине
+            function changeQuantity(index, delta) {
+                let items = JSON.parse(localStorage.getItem('cartItems')) || [];
+                if (!items[index]) return;
+
+                items[index].quantity += delta;
+
+                if (items[index].quantity <= 0) {
+                    // Удаляем товар, если количество 0 или меньше
+                    const removedTitle = items[index].title;
+                    items.splice(index, 1);
+
+                    // Обновляем состояние кнопок Added (удаляем товар из addedItems)
+                    let addedItems =
+                        JSON.parse(localStorage.getItem('addedItems')) || [];
+                    addedItems = addedItems.filter(
+                        (title) => title !== removedTitle
+                    );
+                    localStorage.setItem(
+                        'addedItems',
+                        JSON.stringify(addedItems)
+                    );
+                }
+
+                localStorage.setItem('cartItems', JSON.stringify(items));
+                renderCart();
+            }
+
+            // Очистить корзину
+            function clearCart() {
+                localStorage.removeItem('cartItems');
+                localStorage.removeItem('addedItems');
+                renderCart();
+            }
+
+            // Оформить заказ
+            function checkoutCart() {
+                alert('Спасибо за заказ!');
+                localStorage.removeItem('cartItems');
+                localStorage.removeItem('addedItems');
+                renderCart();
+            }
+
+            // При загрузке страницы сразу показываем корзину
+            window.addEventListener('DOMContentLoaded', renderCart);
+        </script>
+    </body>
+</html>

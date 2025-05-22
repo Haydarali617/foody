@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px)  {
+
+   
+    .nav-list {
+        padding: 30px !important;
+        width: 100% !important;
+        margin-left: 0px !important;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+    
+}   

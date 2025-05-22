@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.fist {
+    background-image: url('https://foody-999.netlify.app/img/carousel-1.jpg');
+    width: 100%;
+    height: 400px !important;
+    background-size: cover;
+}
+.sraka{
+    z-index: -1;
+}
+.sraka-list {
+    width: auto;
+    list-style: none;
+    gap: 5px;
+    display: flex;
+}
+
+.sraka-title {
+    color: black;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.sraka-li {
+    color: #1c1c1ca9;
+}
+.sraka-too {
+    color: black;
+}
+
+.about-too {
+    height: auto;
+    width: 100%;
+    margin-top: 100px;
+}
+.left-main {
+    margin-top: 50px;
+}
+.pre-testi {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin-left: 0px !important;
+}
+
+.footer-too {
+    color: white !important;
+}
+
+.blog-too {
+    flex-wrap: wrap;
+}
+.blog-foot-too {
+    width: 100%;
+    height: 350px;
+    margin-top: 1000px;
+}
+
+.triangle {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+.fa-triangle-exclamation {
+    color: rgb(53, 200, 53);
+    font-size: 80px;
+}
+
+.triangle-num {
+    font-size: 80px;
+}
+.triangle-title {
+    font-size: 35px;
+    font-weight: 600;
+}
+.triangle-text {
+    width: 600px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    text-align: center;
+}
+.triangle-btn {
+    width: 231px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    height: 57px;
+    background-color: rgb(60, 184, 21);
+}
+.follow {
+    display: flex;
+    width: 100%;
+}
+.contact-facebook-too {
+    color: black;
+}
+.contact-us {
+    width: 40% !important;
+    height: 493px;
+    padding: 40px;
+    background-color: #3cb815;
+}
+.main-contact {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-reg {
+    width: 55%;
+    gap: 10px;
+    height: 493px;
+    flex-wrap: wrap;
+}
+
+.call-title {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+.email-envelope {
+    color: white;
+}
+
+.fa-phone {
+    color: white;
+}
+
+.call-ic {
+    display: flex;
+    gap: 14px;
+    color: white;
+    font-size: 17px;
+}
+
+.email-contact-too {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.follow {
+    width: 100%;
+    gap: 4px;
+    display: flex;
+    align-items: center !important;
+}
+
+.contact-twitter {
+    width: 38px;
+    height: 38px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: #3cb815;
+    transition: 400ms;
+    padding: 6px 3px 4px 11px;
+}
+.contact-twitter-too {
+    color: white;
+}
+.contact-twitter:hover {
+    background-color: white;
+    transition: 400ms;
+}
+.contact-twitter:hover i {
+    color: black;
+    transition: 400ms;
+}
+.contact-facebook-too {
+    color: white;
+}
+.another {
+    padding: 5px 0px 5px 11px;
+}
+.another-yt {
+    padding: 0px 8px 0px 0px !important;
+}
+.reg-title {
+    width: 100%;
+    color: #757575;
+}
+
+.fa-phone{
+    color: gray !important      ;
+}
+
+.reg-input-1 {
+    width: 350px;
+    height: 58px;
+    padding: 20px;
+    border: 1px solid #757575;
+}
+.reg-input-2 {
+    width: 350px;
+    height: 58px;
+    padding: 20px;
+    border: 1px solid #757575;
+}
+.contact-phone{
+    color: white !important;
+}
+.main-contact{
+    display: flex;
+  
+}
+.another-linked{
+    padding: 0px    ;
+}
+.reg-div {
+    display: flex;
+    justify-content: space-between;
+}
+.reg-input-3 {
+    width: 100%;
+    height: 58px;
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #757575;
+}
+
+.reg-text-area {
+    width: 100%;
+    height: 215px;
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #757575;
+}
+
+.reg-btn {
+    width: 205px;
+    height: 57px;
+    border-radius: 50px;
+    background-color: #3cb815;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    font-size: 18px;
+}
+.iframe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px)  {
+    .fist{
+        height: 200px;
+        margin-bottom: 50px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .top{
+        display: none;
+    }
+    .sraka{
+        z-index: -1 !important;
+    }
+
+    .sraka-title{
+        margin-top: 100px !important;
+    }
+    .nav-list {
+        padding: 30px !important;
+        width: 100% !important;
+        margin-left: 0px !important;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+
+    .footer-text{
+        display: none;
+    }
+
+    .pre-testi{
+        margin-left: 0px !important;
+        font-size: 15px;
+        display: flex;
+        text-align: center;
+        width: 100%;
+    }
+
+    .blog-foot-too{
+        height: 1px !important;
+    }
+
+    .contact-us{
+        width: 100% !important;
+    }
+    .main-contact{
+        height: 1200px;
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .contact-reg{
+        width: 100% !important;
+    }
+    .reg-div{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .reg-input-1{
+        width: 100%;
+    }
+    .reg-input-2{
+        width: 100%;
+    }
+    .triangle-text{
+        width: 100%;
+    }
+}   
+
+
+@media (min-width: 768px) and (max-width: 991px)  {
+    .fist{
+        height: 200px;
+        margin-bottom: 50px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .top{
+        display: none;
+    }
+  
+
+    .sraka-title{
+        margin-top: 100px !important;
+    }
+
+    .footer-text{
+        display: none;
+    }
+
+    .pre-testi{
+        text-align: center;
+        width: 100% !important;
+        margin-left: 0px !important;
+        display: flex;
+        font-size: 15px;
+    }
+
+    .blog-foot-too{
+        height: 1px !important;
+    }
+
+    .contact-us{
+        width: 100% !important;
+    }
+    .main-contact{
+        height: 1200px;
+        justify-content: start;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .contact-reg{
+        width: 100% !important;
+    }
+    .reg-div{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .reg-input-1{
+        width: 100%;
+    }
+    .reg-input-2{
+        width: 100%;
+    }
+    .triangle-text{
+        width: 100%;
+    }
+    .reg-text-area {
+        width: 100%;
+        height: 100px;
+        margin-top: 15px;
+        padding: 20px;
+        border: 1px solid #757575;
+    }
+}   
+
+
