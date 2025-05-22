@@ -40,6 +40,7 @@ function filterCards(category) {
         btn3.classList.add('b3');
     }
 }
+
 function addToCart(button) {
     const card = button.closest('.card');
     const title = card.querySelector('.product-card-title').innerText;
@@ -50,20 +51,33 @@ function addToCart(button) {
 
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    // ❗ Убираем проверку и просто добавляем новую карточку каждый раз
+    // Yangi mahsulot qo‘shamiz
     cartItems.push({ title, price: priceText, image, quantity: 1 });
-
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    // UI: заменить кнопку на "Added"
+    // Tugmani o‘zgartiramiz
     button.innerHTML = `<span><i class="fa-solid fa-check"></i></span> Added`;
     button.disabled = true;
 
-    // Сохраняем в addedItems, чтобы при перезагрузке состояние сохранилось
+    // addedItems ga image src ni qo‘shamiz (unikal identifikator sifatida)
     let addedItems = JSON.parse(localStorage.getItem('addedItems')) || [];
-    if (!addedItems.includes(title)) {
-        addedItems.push(title);
+    if (!addedItems.includes(image)) {
+        addedItems.push(image);
         localStorage.setItem('addedItems', JSON.stringify(addedItems));
     }
-    
 }
+
+// Sahifa yuklanganda: faqat added bo‘lgan card tugmalarini bloklaymiz
+window.addEventListener('DOMContentLoaded', () => {
+    const addedItems = JSON.parse(localStorage.getItem('addedItems')) || [];
+
+    document.querySelectorAll('.card').forEach((card) => {
+        const image = card.querySelector('img.product-img').src;
+        const button = card.querySelector('button.add-card');
+
+        if (addedItems.includes(image)) {
+            button.innerHTML = `<span><i class="fa-solid fa-check"></i></span> Added`;
+            button.disabled = true;
+        }
+    });
+});

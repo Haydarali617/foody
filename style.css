@@ -494,7 +494,6 @@
     background-color: white;
 }
 
-
 .extra-prod-btn {
     width: 100px;
     border: 1px solid #3cb815;
@@ -551,7 +550,8 @@
     text-align: center;
     position: relative;
     top: 15px;
-    z-index: 9999;
+    z-index: 1;
+    z-index: 1;
     left: 15px;
 }
 .product-img {
@@ -640,7 +640,7 @@ button.added {
     display: flex;
     align-items: center;
     text-align: center;
-   
+
     font-size: 15px;
     text-decoration: none;
 
